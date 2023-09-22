@@ -5,6 +5,6 @@ import LayOut from './LayOut/LayOut.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <LayOut></LayOut>
+   <LayOut></LayOut>
   </React.StrictMode>,
 )
