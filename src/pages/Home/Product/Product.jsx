@@ -14,8 +14,8 @@ const Product = () => {
          <h2 className="text-center text-4xl text-primary font-medium bg-background p-5 rounded-2xl">Shopping Gallery</h2>
          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {
-               products.slice(0, 8).map((product, i)=><ProductCard
-               key={i}
+               products.slice(0, 8).map((product)=><ProductCard
+               key={product._id}
                product = {product}
                ></ProductCard>)
             }

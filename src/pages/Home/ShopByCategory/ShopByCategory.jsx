@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react';
+import ProductCard from '../Product/ProductCard/ProductCard';
 
 const ShopByCategory = () => {
    const [activeTab, setActiveTab] = useState("sports-car")
-   console.log('dd', activeTab)
+   const [products, setProducts] = useState([]);
+   console.log('dd', products)
 
    const handleActiveTab = (tabStatus)=>{
       setActiveTab(tabStatus)
    }
 
    useEffect(() => {
-      fetch('product.json')
+      fetch(`http://localhost:5000/by-category/${activeTab}`)
          .then(res => res.json())
-         .then(data => setActiveTab(data))
-   }, [])
+         .then(data => setProducts(data))
+   }, [activeTab])
    return (
       <div className='bg-slate-50'>
          <div className='sm:px-10 md:px-16 sm:2 md:py-2 mt-10 text-center'>
@@ -28,6 +30,14 @@ const ShopByCategory = () => {
 
                <button onClick={()=>handleActiveTab("police-car")}  className={` py-2 px-5 rounded-md text-xl text-white hover:bg-primary ${activeTab == "police-car"?"bg-primary":"bg-background"}`}>Police Car</button>
             </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {
+               products.slice(0, 4).map((product)=><ProductCard
+               key={product._id}
+               product = {product}
+               ></ProductCard>)
+            }
+         </div>
          </div>
       </div>
    );
