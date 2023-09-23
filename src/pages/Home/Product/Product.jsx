@@ -1,10 +1,25 @@
+import { useEffect, useState } from "react";
+import ProductCard from "./ProductCard/ProductCard";
 
 
 const Product = () => {
+   const [products, setProducts] = useState([]);
+   useEffect(()=>{
+      fetch('product.json')
+      .then(res=>res.json())
+      .then(data=>setProducts(data))
+   },[])
    return (
-      <div>
-         <h2>Product</h2>
-         {/* <img src={singleProduct.img} alt="" /> */}
+      <div className="sm:px-10 md:px-16 sm:2 md:py-2 mt-10">
+         <h2 className="text-center text-4xl text-primary font-medium bg-background p-5 rounded-2xl">Shop Now</h2>
+         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {
+               products.map(product=><ProductCard
+               key={product._id}
+               product = {product}
+               ></ProductCard>)
+            }
+         </div>
       </div>
    );
 };

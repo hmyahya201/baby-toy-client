@@ -1,7 +1,7 @@
 [{
    "category": "sports-car",
-   "img": "https://ibb.co/VLKsP4L",
-   "name": "Superfast Sports Car 1",
+   "img": "https://i.ibb.co/XFn7ChB/sports-car-1.jpg",
+   "name": "Superfast Sports Car",
    "price": 99999.99,
    "rating": 4.5,
    "description": "Experience the thrill of speed and luxury in this superfast sports car. It's the perfect blend of power and elegance.",
@@ -12,8 +12,8 @@
  },
  {
    "category": "sports-car",
-   "img": "https://ibb.co/TbGWnp3",
-   "name": "Superfast Sports Car 2",
+   "img": "https://i.ibb.co/B44fGc3/sports-car-2.jpg",
+   "name": "Superfast Sports Car",
    "price": 105999.99,
    "rating": 4.7,
    "description": "Get ready to turn heads with this stunning sports car. It's designed for those who demand the best in performance and style.",
@@ -24,8 +24,8 @@
  },
  {
    "category": "sports-car",
-   "img": "https://ibb.co/3WSHfbJ",
-   "name": "Ultimate Speedster 1",
+   "img": "https://i.ibb.co/xMS6KwJ/sport-car-3.jpg",
+   "name": "Ultimate Speedster",
    "price": 129999.99,
    "rating": 4.9,
    "description": "The ultimate speedster for adrenaline junkies. Feel the power and precision of this masterpiece on the road.",
@@ -36,7 +36,7 @@
  },
  {
    "category": "sports-car",
-   "img": "https://ibb.co/fCYHVZ4",
+   "img": "https://i.ibb.co/NmqTkQB/sport-car-5.jpg",
    "name": "Sporty Elegance",
    "price": 89999.99,
    "rating": 4.6,
@@ -48,7 +48,7 @@
  },
  {
    "category": "sports-car",
-   "img": "https://ibb.co/xmm2YXL",
+   "img": "https://i.ibb.co/XFn7ChB/sports-car-1.jpg",
    "name": "Speed Demon 1",
    "price": 95000.00,
    "rating": 4.4,
@@ -60,7 +60,7 @@
  },
  {
    "category": "sports-car",
-   "img": "https://ibb.co/tY0qJ7f",
+   "img": "https://i.ibb.co/Jch9MJc/sport-car-6.jpg",
    "name": "Luxury Cruiser",
    "price": 115000.00,
    "rating": 4.8,
@@ -73,7 +73,7 @@
 
  {
    "category": "truck",
-   "img": "https://ibb.co/cT8XDV5",
+   "img": "https://i.ibb.co/tKCgDn6/truck-1.jpg",
    "name": "Heavy-Duty Hauler",
    "price": 79999.99,
    "rating": 4.2,
@@ -85,7 +85,7 @@
  },
  {
    "category": "truck",
-   "img": "https://ibb.co/R7bgSWV",
+   "img": "https://i.ibb.co/Kw9btXx/truck-2.jpg",
    "name": "Off-Road Adventure Truck",
    "price": 89999.99,
    "rating": 4.5,
@@ -97,7 +97,7 @@
  },
  {
    "category": "truck",
-   "img": "https://ibb.co/FxhrrHq",
+   "img": "https://i.ibb.co/MG4YcTR/truck-3.jpg",
    "name": "Urban Explorer",
    "price": 74999.99,
    "rating": 4.0,
@@ -109,7 +109,7 @@
  },
  {
    "category": "truck",
-   "img": "https://ibb.co/HxsWtvr",
+   "img": "https://i.ibb.co/6nyMMXJ/truck-4.jpg",
    "name": "Highway Cruiser",
    "price": 99999.99,
    "rating": 4.8,
@@ -121,7 +121,7 @@
  },
  {
    "category": "truck",
-   "img": "https://ibb.co/Dp7zBtf",
+   "img": "https://i.ibb.co/d7Mfcyz/truck-5.jpg",
    "name": "Family-Friendly Truck",
    "price": 67999.99,
    "rating": 4.3,
@@ -133,7 +133,7 @@
  },
  {
    "category": "truck",
-   "img": "https://ibb.co/7CyPKBD",
+   "img": "https://i.ibb.co/HgPpn3v/truck-6.jpg",
    "name": "All-Terrain Beast",
    "price": 109999.99,
    "rating": 4.7,
@@ -146,7 +146,7 @@
 
  {
    "category": "regular-car",
-   "img": "https://ibb.co/fVJJ6cD",
+   "img": "https://i.ibb.co/3dSHQc5/reguler-car-1.jpg",
    "name": "Compact Commuter",
    "price": 19999.99,
    "rating": 4.2,
@@ -158,7 +158,7 @@
  },
  {
    "category": "regular-car",
-   "img": "https://ibb.co/T25BD8f",
+   "img": "https://i.ibb.co/VDM8HGK/reguler-car-2.jpg",
    "name": "Family Sedan",
    "price": 24999.99,
    "rating": 4.5,
@@ -170,7 +170,7 @@
  },
  {
    "category": "regular-car",
-   "img": "https://ibb.co/1dvzxZc",
+   "img": "https://i.ibb.co/W365YRv/reguler-car-3.jpg",
    "name": "Economical Hatchback",
    "price": 17999.99,
    "rating": 4.0,
@@ -182,7 +182,7 @@
  },
  {
    "category": "regular-car",
-   "img": "https://ibb.co/yRXPbxF",
+   "img": "https://i.ibb.co/qWyJwB6/reguler-car-4.jpg",
    "name": "Sporty Coupe",
    "price": 28999.99,
    "rating": 4.8,
@@ -194,7 +194,7 @@
  },
  {
    "category": "regular-car",
-   "img": "https://ibb.co/3WSHfbJ",
+   "img": "https://i.ibb.co/MSLDyVv/reguler-car-5.jpg",
    "name": "Midsize Comfort",
    "price": 21999.99,
    "rating": 4.3,
@@ -206,7 +206,7 @@
  },
  {
    "category": "regular-car",
-   "img": "https://ibb.co/pw4p5d6",
+   "img": "https://i.ibb.co/hx00QqY/reguler-car-6.jpg",
    "name": "Efficient Hybrid",
    "price": 26999.99,
    "rating": 4.7,
@@ -219,7 +219,7 @@
 
  {
    "category": "fire-truck",
-   "img": "https://ibb.co/GckpBCM",
+   "img": "https://i.ibb.co/ZGL93mF/fire-truck-1.jpg",
    "name": "Rescue Squad Truck",
    "price": 99999.99,
    "rating": 4.5,
@@ -231,7 +231,7 @@
  },
  {
    "category": "fire-truck",
-   "img": "https://ibb.co/9GsH4PX",
+   "img": "https://i.ibb.co/6Z5jR9Q/fire-truck-2.jpg",
    "name": "Aerial Ladder Truck",
    "price": 129999.99,
    "rating": 4.8,
@@ -243,7 +243,7 @@
  },
  {
    "category": "fire-truck",
-   "img": "https://ibb.co/17F2Rg4",
+   "img": "https://i.ibb.co/J2CrYKR/fire-truck-3.jpg",
    "name": "Wildfire Suppression Unit",
    "price": 119999.99,
    "rating": 4.7,
@@ -255,7 +255,7 @@
  },
  {
    "category": "fire-truck",
-   "img": "https://ibb.co/L6v9T8z",
+   "img": "https://i.ibb.co/bQcdN0G/fire-truck-4.jpg",
    "name": "Airport Fire Responder",
    "price": 159999.99,
    "rating": 4.9,
@@ -267,7 +267,7 @@
  },
  {
    "category": "fire-truck",
-   "img": "https://ibb.co/ZJCq649",
+   "img": "https://i.ibb.co/hCDFd05/fire-truck-5.jpg",
    "name": "Hazmat Response Unit",
    "price": 139999.99,
    "rating": 4.6,
@@ -279,7 +279,7 @@
  },
  {
    "category": "fire-truck",
-   "img": "https://ibb.co/VJj6dmz",
+   "img": "https://i.ibb.co/NZpCQWN/fire-truck-6.jpg",
    "name": "Rapid Intervention Vehicle",
    "price": 149999.99,
    "rating": 4.7,
@@ -292,7 +292,7 @@
 
  {
   "category": "police-car",
-  "img": "https://ibb.co/HGyjhzy",
+  "img": "https://i.ibb.co/DYDMBnR/police-car-1.jpg",
   "name": "Patrol Cruiser",
   "price": 29999.99,
   "rating": 4.5,
@@ -304,7 +304,7 @@
 },
 {
   "category": "police-car",
-  "img": "https://ibb.co/r5XzHT1",
+  "img": "https://i.ibb.co/vqPjQc8/police-car-2.jpg",
   "name": "Undercover Detective Car",
   "price": 34999.99,
   "rating": 4.7,
@@ -316,7 +316,7 @@
 },
 {
   "category": "police-car",
-  "img": "https://ibb.co/WkMG4fS",
+  "img": "https://i.ibb.co/2WhWny4/police-car-3.jpg",
   "name": "K-9 Unit Vehicle",
   "price": 31999.99,
   "rating": 4.6,
@@ -328,7 +328,7 @@
 },
 {
   "category": "police-car",
-  "img": "https://ibb.co/tQKQm4r",
+  "img": "https://i.ibb.co/5rSGgLq/police-car-4.jpg",
   "name": "High-Speed Pursuit Car",
   "price": 39999.99,
   "rating": 4.9,
@@ -340,7 +340,7 @@
 },
 {
   "category": "police-car",
-  "img": "https://ibb.co/1Qqmd0x",
+  "img": "https://i.ibb.co/HG9bq1k/police-car-5.jpg",
   "name": "Traffic Enforcement Vehicle",
   "price": 32999.99,
   "rating": 4.5,
@@ -352,7 +352,7 @@
 },
 {
   "category": "police-car",
-  "img": "https://ibb.co/9h94xjr",
+  "img": "https://i.ibb.co/nQyFPcy/police-car-6.jpg",
   "name": "SWAT Tactical Vehicle",
   "price": 44999.99,
   "rating": 4.8,
