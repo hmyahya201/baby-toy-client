@@ -1,14 +1,10 @@
+import { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
+import { CategoryContext } from "../../../Provider/CategoryProvider/CategoryProvider";
 const NavBarBottom = () => {
-   const categories = [
-      'Categories',
-      'Sports Car',
-      'Truck',
-      'Regular Car',
-      'Fire Truck',
-      ' Police Car',
-   ]
+   const {categories} = useContext(CategoryContext)
+ 
    const menu = [
       'Home',
       'All Toys',
@@ -21,7 +17,7 @@ const NavBarBottom = () => {
          <div className="w-60">
             <select className="select select-bordered w-full max-w-xs bg-background text-black md:text-xl sm:text-sm">
                {
-                  categories.map((category, i) => <option key={i} value={category}>{category}</option>)
+                  categories? categories.map((category, i) => <option key={i} value={category.name}>{category.name}</option>):""
                }
             </select>
          </div>
