@@ -1,17 +1,19 @@
 
 const ProductCard = ({product}) => {
-   console.log("product", product)
-   const {img} = product
+   const {img, name, price, rating} = product
    return (
-      <div className="card w-auto bg-base-200 shadow-xl">
+      <div className="card bg-base-200 shadow-xl sm:w-auto sm:h-auto">
          <figure className="px-10 pt-10">
             <img src={img} alt="Shoes" className="rounded-xl" />
          </figure>
          <div className="card-body items-center text-center">
-            <h2 className="card-title">Shoes!</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <h2 className="card-title">{name}</h2>
+            <div className="flex justify-between mt-2">
+               <p>Price:{"$"+price}</p>
+               <p className="ml-10">Rating:{rating}</p>
+            </div>
             <div className="card-actions">
-               <button className="btn bg-background text-primary hover:bg-primary hover:text-white">Buy Now</button>
+               <button className="btn bg-background text-primary hover:bg-primary hover:text-white">View Details</button>
             </div>
          </div>
       </div>
