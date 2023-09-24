@@ -2,16 +2,11 @@ import { useContext } from "react";
 import { FaCartPlus } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { CategoryContext } from "../../../Provider/CategoryProvider/CategoryProvider";
+import { Link } from "react-router-dom";
 const NavBarBottom = () => {
    const {categories} = useContext(CategoryContext)
  
-   const menu = [
-      'Home',
-      'All Toys',
-      'My Toys',
-      'Add A Toy',
-      'Blogs',
-   ]
+  console.log( "ff", categories)
    return (
       <div className="flex items-center justify-between sm:px-10 md:px-16 sm:2 md:py-2 bg-primary">
          <div className="w-60">
@@ -23,9 +18,11 @@ const NavBarBottom = () => {
          </div>
          <div className="sm:hidden lg:block">
             <ul className="flex me-36 text-white text-xl font-medium">
-               {
-                  menu.map((link, i) => <li className="px-3 py-2 cursor-pointer" key={i}>{link}</li>)
-               }
+              <Link to="/" className="px-3 py-2 cursor-pointer">Home</Link>
+              <Link to="alltoys" className="px-3 py-2 cursor-pointer">All Toys</Link>
+              <Link to="/" className="px-3 py-2 cursor-pointer">My Toys</Link>
+              <Link to="addtoy" className="px-3 py-2 cursor-pointer">Add A Toy</Link>
+              <Link to="/" className="px-3 py-2 cursor-pointer">Blogs</Link>
             </ul>
          </div>
          <div className="flex">

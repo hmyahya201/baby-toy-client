@@ -4,7 +4,6 @@ import ProductCard from '../Product/ProductCard/ProductCard';
 const ShopByCategory = () => {
    const [activeTab, setActiveTab] = useState("sports-car")
    const [products, setProducts] = useState([]);
-   console.log('dd', products)
 
    const handleActiveTab = (tabStatus)=>{
       setActiveTab(tabStatus)
