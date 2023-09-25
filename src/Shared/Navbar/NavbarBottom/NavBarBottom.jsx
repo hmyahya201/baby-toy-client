@@ -19,6 +19,7 @@ const NavBarBottom = () => {
          <div className="sm:hidden lg:block">
             <ul className="flex me-36 text-white text-xl font-medium">
               <Link to="/" className="px-3 py-2 cursor-pointer">Home</Link>
+              <Link to="shop" className="px-3 py-2 cursor-pointer">Shop</Link>
               <Link to="alltoys" className="px-3 py-2 cursor-pointer">All Toys</Link>
               <Link to="/" className="px-3 py-2 cursor-pointer">My Toys</Link>
               <Link to="addtoy" className="px-3 py-2 cursor-pointer">Add A Toy</Link>
