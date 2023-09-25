@@ -12,7 +12,7 @@ const Shop = () => {
       <div>
           <div className="relative">
             <img src={banner} alt="" />
-            <h2 className="text-6xl text-primary text-center font-medium items-center absolute top-1/2 left-1/2 -translate-x-1/2">All Toys</h2>
+            <h2 className="text-6xl text-primary text-center font-medium items-center absolute top-1/2 left-1/2 -translate-x-1/2">Shop Now</h2>
          </div>
          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {
