@@ -5,6 +5,9 @@ import ToyDetails from "../pages/ToyDetails/ToyDetails";
 import Shop from "../pages/Shop/Shop";
 import UploadToy from "../pages/UploadToy/UploadToy";
 import AllToys from "../pages/AllToys/AllToys";
+import Login from "../pages/Login/Login";
+import SignUp from "../pages/SignUp/SignUp";
+import PrivateRoute from "./PrivateRoute/PrivateRout";
 
 
 const router = createBrowserRouter([
@@ -18,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path:"toydetails/:id",
-        element: <ToyDetails></ToyDetails>,
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/toydetails/${params.id}`)
       },
       {
@@ -32,7 +35,15 @@ const router = createBrowserRouter([
       },
       {
         path:"addtoy",
-        element: <UploadToy></UploadToy>,
+        element: <PrivateRoute><UploadToy></UploadToy></PrivateRoute>,
+      },
+      {
+        path:"login",
+        element: <Login></Login>,
+      },
+      {
+        path:"signup",
+        element: <SignUp></SignUp>,
       }
      ]
    },

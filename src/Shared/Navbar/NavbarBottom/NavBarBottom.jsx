@@ -3,12 +3,22 @@ import { FaCartPlus } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { CategoryContext } from "../../../Provider/CategoryProvider/CategoryProvider";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProviders/AuthProviders";
 const NavBarBottom = () => {
    const {categories} = useContext(CategoryContext)
+   const {user, logOutUser} = useContext(AuthContext)
+   const handleLogOut = ()=>{
+      logOutUser()
+      .then(()=>{
+          alert("You are logged out")
+          localStorage.removeItem("car-access-token")
+      })
+      .catch(error=>console.log(error))
+  }
    return (
       <div className="flex items-center justify-between sm:px-10 md:px-16 sm:2 md:py-2 bg-primary">
          <div className="w-60">
-            <select className="select select-bordered w-full max-w-xs bg-background text-black md:text-xl sm:text-sm">
+            <select className="select select-bordered w-full max-w-xs bg-background text-white md:text-xl sm:text-sm">
                {
                   categories? categories.map((category, i) => <option key={i} value={category.name}>{category.name}</option>):""
                }
@@ -22,6 +32,9 @@ const NavBarBottom = () => {
               <Link to="/" className="px-3 py-2 cursor-pointer">My Toys</Link>
               <Link to="addtoy" className="px-3 py-2 cursor-pointer">Add A Toy</Link>
               <Link to="/" className="px-3 py-2 cursor-pointer">Blogs</Link>
+              {
+               user?<button onClick={handleLogOut} className="px-3 py-2 cursor-pointer">Log Out</button>:<Link to="login" className="px-3 py-2 cursor-pointer">Login</Link>
+              }
             </ul>
          </div>
          <div className="flex">
@@ -31,7 +44,8 @@ const NavBarBottom = () => {
             </div>
             <div className="avatar online sm:hidden lg:block ml-10">
                <div className="w-10 rounded-full">
-                  <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                  {user?<img src={user?.photoURL} />:""}
+                  
                </div>
             </div>
             <div className="lg:hidden ml-10"><FaBars className="text-2xl mt-1 text-background"/></div>
