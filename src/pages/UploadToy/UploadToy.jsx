@@ -30,7 +30,7 @@ const UploadToy = () => {
          </div>
 
          <div className='grid place-items-center mt-10'>
-            <form>
+            <form onSubmit={handleUploadToy}>
                <div className="card w-full shadow-2xl bg-base-100">
                <h2 className='text-center py-4 text-background text-3xl font-medium'>Product Info</h2>
                   <div className="card-body">
