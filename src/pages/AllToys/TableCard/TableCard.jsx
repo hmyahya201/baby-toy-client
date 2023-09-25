@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 const TableCard = ({product}) => {
    const {_id, sellerName, name, category, subCategory, price, quantity, img} = product
-   console.log(product)
    return (
       <tr className="text-sm text-black">
          <th>

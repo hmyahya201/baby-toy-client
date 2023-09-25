@@ -5,8 +5,6 @@ import { CategoryContext } from "../../../Provider/CategoryProvider/CategoryProv
 import { Link } from "react-router-dom";
 const NavBarBottom = () => {
    const {categories} = useContext(CategoryContext)
- 
-  console.log( "ff", categories)
    return (
       <div className="flex items-center justify-between sm:px-10 md:px-16 sm:2 md:py-2 bg-primary">
          <div className="w-60">

@@ -2,24 +2,31 @@ import { useEffect, useState } from 'react';
 import banner from '../../assets/detalis.jpg'
 import { FaSearch } from "react-icons/fa";
 import TableCard from './TableCard/TableCard';
+import { useLoaderData } from 'react-router-dom';
 const AllToys = () => {
+   const { totalItems } = useLoaderData()
    const [products, setProducts] = useState([]);
+   const [currentPage, setCurrentPage] = useState(0)
+   const itemsPerPage = 10;
 
-      const handleSeachSubmit = (event)=>{
-         event.preventDefault()
-         const form = event.target
-         const toyName = form.toyName.value;
-         fetch(`http://localhost:5000/gettoybyname/${toyName}`)
-         .then(res=>res.json())
-         .then(data=>setProducts(data))
-         form.reset()
-      }
+   const totalPage = Math.ceil(totalItems / itemsPerPage)
+   const pageNumbers = [...Array(totalPage).keys()]
 
-   useEffect(() => {
-      fetch('http://localhost:5000/all-toys')
+   const handleSeachSubmit = (event) => {
+      event.preventDefault()
+      const form = event.target
+      const toyName = form.toyName.value;
+      fetch(`http://localhost:5000/gettoybyname/${toyName}`)
          .then(res => res.json())
          .then(data => setProducts(data))
-   }, [])
+      form.reset()
+   }
+
+   useEffect(() => {
+      fetch(`http://localhost:5000/all-toys?page=${currentPage}&limit=${itemsPerPage}`)
+         .then(res => res.json())
+         .then(data => setProducts(data))
+   }, [currentPage])
    return (
       <div>
          <div className="relative">
@@ -28,8 +35,8 @@ const AllToys = () => {
                <h2 className="text-5xl text-primary text-center font-medium items-center" >Search By Toy Name</h2>
                <div className='mt-5 relative'>
                   <form onSubmit={handleSeachSubmit}>
-                  <input name="toyName" type="text" className='w-full border-2 border-primary py-2 px-5 rounded-lg bg-white text-black text-xl' />
-                  <button type='submit' className='bg-primary rounded-lg absolute top-1/2 right-0 -translate-y-1/2 py-3 px-5'><FaSearch className='text-white text-2xl' /></button>
+                     <input name="toyName" type="text" className='w-full border-2 border-primary py-2 px-5 rounded-lg bg-white text-black text-xl' />
+                     <button type='submit' className='bg-primary rounded-lg absolute top-1/2 right-0 -translate-y-1/2 py-3 px-5'><FaSearch className='text-white text-2xl' /></button>
                   </form>
                </div>
             </div>
@@ -62,10 +69,16 @@ const AllToys = () => {
             </table>
          </div>
 
-
-
-         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-
+         <div className='text-center'>
+            <div className='join'>
+               {
+                  pageNumbers.map(number => <button
+                     key={number}
+                     onClick={() => setCurrentPage(number)}
+                     className={`join-item px-5 py-2 text-white ${currentPage == number ? "bg-primary" : "bg-background"}`}
+                  >{number + 1}</button>)
+               }
+            </div>
          </div>
       </div>
    );
