@@ -29,7 +29,7 @@ const NavBarBottom = () => {
               <Link to="/" className="px-3 py-2 cursor-pointer">Home</Link>
               <Link to="shop" className="px-3 py-2 cursor-pointer">Shop</Link>
               <Link to="alltoys" className="px-3 py-2 cursor-pointer">All Toys</Link>
-              <Link to="/" className="px-3 py-2 cursor-pointer">My Toys</Link>
+              <Link to="mytoys" className="px-3 py-2 cursor-pointer">My Toys</Link>
               <Link to="addtoy" className="px-3 py-2 cursor-pointer">Add A Toy</Link>
               <Link to="/" className="px-3 py-2 cursor-pointer">Blogs</Link>
               {

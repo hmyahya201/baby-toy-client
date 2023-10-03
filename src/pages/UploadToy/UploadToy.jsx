@@ -21,6 +21,19 @@ const UploadToy = () => {
          name, category, subCategory, price, img, quantity, rating, sellerName, sellerEmail, description
       }
       console.log(toyInfo)
+      fetch("http://localhost:5000/upload-toy",{
+         method:"POST",
+         headers: {"content-type": "application/json"},
+         body: JSON.stringify(toyInfo)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+         if(data.insertedId){
+            alert("your product is uploaded")
+         }else{
+            alert("something is wrong")
+         }
+      })
    }
    return (
       <div>

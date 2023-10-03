@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../../Provider/AuthProviders/AuthProviders";
 
 const ProductCard = ({product}) => {
+   const {user} = useContext(AuthContext)
    const {_id, img, name, price, rating} = product
+   const alertHandle = ()=>{
+      if(!user){
+         alert("You have to log in first to view details")
+      }
+   }
    return (
       <div className="card bg-base-200 shadow-xl sm:w-auto sm:h-auto">
          <figure className="px-10 pt-10">
@@ -14,7 +22,7 @@ const ProductCard = ({product}) => {
                <p className="ml-10">Rating:{rating}</p>
             </div>
             <div className="card-actions">
-               <Link to={`/toydetails/${_id}`}><button className="btn bg-background text-primary hover:bg-primary hover:text-white">View Details</button></Link>
+               <Link  onClick={alertHandle } to={`/toydetails/${_id}`}><button className="btn bg-background text-primary hover:bg-primary hover:text-white">View Details</button></Link>
             </div>
          </div>
       </div>
