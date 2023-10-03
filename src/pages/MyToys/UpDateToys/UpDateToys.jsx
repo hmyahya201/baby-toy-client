@@ -5,8 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProviders/AuthProviders";
 const UpDateToys = () => {
    const {user} = useContext(AuthContext)
    const toyInfo = useLoaderData()
-   const {name, category, subCategory, price,rating, img, quantity, sellerName} = toyInfo
-   console.log("dddd", toyInfo)
+   const {_id ,name, category, subCategory, price,rating, img, quantity, sellerName} = toyInfo
    const handleUpdateToy = event=>{
       event.preventDefault()
       const form = event.target
@@ -24,6 +23,17 @@ const UpDateToys = () => {
       const toyInfo = {
          name, category, subCategory, price, img, quantity, rating, sellerName, sellerEmail, description
       }
+      fetch(`http://localhost:5000/updatetoy/${_id}`,{
+         method: "PATCH",
+         headers: {"content-type":"application/json"},
+         body: JSON.stringify(toyInfo)
+      })
+      .then(res=>res.json())
+      .then(data=>{
+         if(data.modifiedCount> 0){
+            alert("Your data updated successfully")
+         }
+      })
       console.log(toyInfo)
    }
    return (
