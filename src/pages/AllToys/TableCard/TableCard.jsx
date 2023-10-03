@@ -1,9 +1,24 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProviders/AuthProviders";
 
 const TableCard = ({ product, mytoys }) => {
-   const { _id, sellerName, name, category, subCategory, price, quantity, img } = product
+   const {user} = useContext(AuthContext)
+   const [getInfo, setGetInfo] = useState(product)
+   const { _id, sellerName, rating, name, category, subCategory, price, quantity, img } = getInfo
+   console.log(_id, "fsewo")
 
-   const handleUploadToy = event=>{
+   const fetchDataById = (id)=>{
+      fetch(`http://localhost:5000/toyinfo/${id}`)
+      .then(res=>res.json())
+      .then(data=>{
+         console.log(data)
+         setGetInfo(data)
+         document.getElementById('my_modal_3').showModal()
+      })
+   }
+
+   const handleUpdateToy = event=>{
       event.preventDefault()
       const form = event.target
       const name = form.toyName.value
@@ -22,7 +37,7 @@ const TableCard = ({ product, mytoys }) => {
       }
       console.log(toyInfo)
    }
-   
+
    return (
       <tr className="text-sm text-black">
          <th>
@@ -37,7 +52,7 @@ const TableCard = ({ product, mytoys }) => {
          <td>{category}</td>
          <td>{subCategory}</td>
          <td>{"$" + price}</td>
-         <td>{mytoys ? <button onClick={() => document.getElementById('my_modal_3').showModal()} className="btn bg-background text-primary hover:bg-primary hover:text-white">updata</button> : quantity}</td>
+         <td>{mytoys ? <button onClick={() =>fetchDataById(_id)} className="btn bg-background text-primary hover:bg-primary hover:text-white">updata</button> : quantity}</td>
          <th>
             {
                mytoys ? <button className="btn bg-background text-primary hover:bg-primary hover:text-white">Delete</button> : <Link to={`/toydetails/${_id}`}><button className="btn bg-background text-primary hover:bg-primary hover:text-white">details</button></Link>
@@ -50,68 +65,67 @@ const TableCard = ({ product, mytoys }) => {
                   {/* if there is a button in form, it will close the modal */}
                   <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                </form>
-               <h3 className="font-bold text-lg">Hello!</h3>
                <div className='grid place-items-center mt-10'>
-                  <form onSubmit={handleUploadToy}>
+                  <form onSubmit={handleUpdateToy}>
                      <div className="card w-full shadow-2xl bg-base-100">
                         <h2 className='text-center py-4 text-background text-3xl font-medium'>Product Info</h2>
                         <div className="card-body">
-                           <div className='grid grid-cols-3 gap-6'>
+                           <div className='grid grid-cols-2 gap-6'>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Toy Name</span>
                                  </label>
-                                 <input type="text" name="toyName" placeholder="Toy Name" className="input input-bordered" />
+                                 <input type="text" name="toyName" defaultValue={name} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Category Name</span>
                                  </label>
-                                 <input type="text" name="category" placeholder="category" className="input input-bordered" />
+                                 <input type="text" name="category" defaultValue={category} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Sub Category Name</span>
                                  </label>
-                                 <input type="text" name="subCategory" placeholder="sub category" className="input input-bordered" />
+                                 <input type="text" name="subCategory" defaultValue={subCategory} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Price</span>
                                  </label>
-                                 <input type="text" name="price" placeholder="price" className="input input-bordered" />
+                                 <input type="text" name="price" defaultValue={price} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Image</span>
                                  </label>
-                                 <input type="url" name="image" placeholder="url" className="input input-bordered" />
+                                 <input type="url" name="image" defaultValue={img}className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Quantity</span>
                                  </label>
-                                 <input type="number" name="quantity" placeholder="quantity" className="input input-bordered" />
+                                 <input type="number" name="quantity" defaultValue={quantity} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Rating</span>
                                  </label>
-                                 <input type="text" name="rating" placeholder="rating" className="input input-bordered" />
+                                 <input type="text" name="rating" defaultValue={rating} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
                                  <label className="label">
                                     <span className="label-text">Seller Name</span>
                                  </label>
-                                 <input type="text" name="sellerName" placeholder="your name" className="input input-bordered" />
+                                 <input type="text" name="sellerName" defaultValue={sellerName} className="input input-bordered" />
                               </div>
 
                               <div className="form-control">
@@ -125,11 +139,11 @@ const TableCard = ({ product, mytoys }) => {
                                  <label className="label">
                                     <span className="label-text">Description</span>
                                  </label>
-                                 <textarea name="description" placeholder="about your product" className="textarea textarea-bordered textarea-xs w-full max-w-xs" ></textarea>
+                                 <textarea name="description" defaultValue="about your product" className="textarea textarea-bordered textarea-xs w-full max-w-xs" ></textarea>
                               </div>
                            </div>
                            <div className="form-control mt-6">
-                              <button className="btn btn-primary">upload</button>
+                              <button type="submit" className="btn btn-primary">Update</button>
                            </div>
                         </div>
                      </div>
