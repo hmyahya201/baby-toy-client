@@ -1,9 +1,25 @@
 
 import { Link } from "react-router-dom";
 const TableCard = ({ product, mytoys }) => {
+
    const { _id, sellerName,  name, category, subCategory, price, quantity, img } = product
+  
 
-
+      const handleDelete = (id)=>{
+         fetch(`http://localhost:5000/delete/${id}`,{
+            method:"DELETE",
+            headers:{"content-type": "application/json"}
+         })
+         .then(res=>res.json())
+         .then(data=>{
+            if(data.deletedCount>0){
+               alert("your data is deleted successfully")
+               const remaining = product.filter(pd=>pd._id !== id)
+               product = remaining
+            }
+            console.log(data)
+         })
+      }
   
 
    return (
@@ -23,7 +39,7 @@ const TableCard = ({ product, mytoys }) => {
          <td>{mytoys ? <Link to={`/updatetoys/${_id}`}><button className="btn bg-background text-primary hover:bg-primary hover:text-white">updata</button></Link> : quantity}</td>
          <th>
             {
-               mytoys ? <button className="btn bg-background text-primary hover:bg-primary hover:text-white">Delete</button> : <Link to={`/toydetails/${_id}`}><button className="btn bg-background text-primary hover:bg-primary hover:text-white">details</button></Link>
+               mytoys ? <button onClick={()=>handleDelete(_id)} className="btn bg-background text-primary hover:bg-primary hover:text-white">Delete</button> : <Link to={`/toydetails/${_id}`}><button className="btn bg-background text-primary hover:bg-primary hover:text-white">details</button></Link>
             }
          </th>
       </tr>
