@@ -9,7 +9,6 @@ import SocialLogin from '../../Shared/SocialLogin/SocialLogin';
 const Login = () => {
     const {loginUser} = useContext(AuthContext);
     const location = useLocation()
-    console.log('login', location)
     const navigate = useNavigate()
     const from = location.state?.from.pathname || "/";
 
