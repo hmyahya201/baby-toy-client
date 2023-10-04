@@ -6,7 +6,7 @@ const TableCard = ({ product, mytoys }) => {
   
 
       const handleDelete = (id)=>{
-         fetch(`http://localhost:5000/delete/${id}`,{
+         fetch(`https://baby-toy.onrender.com/delete/${id}`,{
             method:"DELETE",
             headers:{"content-type": "application/json"}
          })

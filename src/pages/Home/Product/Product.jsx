@@ -6,7 +6,7 @@ const Product = () => {
    const [products, setProducts] = useState([]);
    console.log(products)
    useEffect(()=>{
-      fetch('http://localhost:5000/all-toys')
+      fetch('https://baby-toy.onrender.com/all-toys')
       .then(res=>res.json())
       .then(data=>setProducts(data))
    },[])

@@ -23,7 +23,7 @@ const UpDateToys = () => {
       const toyInfo = {
          name, category, subCategory, price, img, quantity, rating, sellerName, sellerEmail, description
       }
-      fetch(`http://localhost:5000/updatetoy/${_id}`,{
+      fetch(`https://baby-toy.onrender.com/updatetoy/${_id}`,{
          method: "PATCH",
          headers: {"content-type":"application/json"},
          body: JSON.stringify(toyInfo)

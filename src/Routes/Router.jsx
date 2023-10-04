@@ -10,6 +10,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute/PrivateRout";
 import MyToys from "../pages/MyToys/MyToys";
 import UpDateToys from "../pages/MyToys/UpDateToys/UpDateToys";
+import Blog from "../pages/Blog/Blog";
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       {
         path:"toydetails/:id",
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/toydetails/${params.id}`)
+        loader:({params})=>fetch(`https://baby-toy.onrender.com/toydetails/${params.id}`)
       },
       {
         path:"shop",
@@ -33,7 +34,7 @@ const router = createBrowserRouter([
       {
         path:"alltoys",
         element: <AllToys></AllToys>,
-        loader: ()=>fetch("http://localhost:5000/totaltoys")
+        loader: ()=>fetch("https://baby-toy.onrender.com/totaltoys")
       },
       {
         path:"addtoy",
@@ -52,9 +53,13 @@ const router = createBrowserRouter([
         element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
       },
       {
+        path:"blogs",
+        element: <Blog></Blog>,
+      },
+      {
         path:"updatetoys/:id",
         element: <UpDateToys></UpDateToys>,
-        loader : ({params})=>fetch(`http://localhost:5000/toyinfo/${params.id}`)
+        loader : ({params})=>fetch(`https://baby-toy.onrender.com/toyinfo/${params.id}`)
       }
      ]
    },

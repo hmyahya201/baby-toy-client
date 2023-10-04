@@ -10,7 +10,7 @@ const ShopByCategory = () => {
    }
 
    useEffect(() => {
-      fetch(`http://localhost:5000/by-category/${activeTab}`)
+      fetch(`https://baby-toy.onrender.com/by-category/${activeTab}`)
          .then(res => res.json())
          .then(data => setProducts(data))
    }, [activeTab])

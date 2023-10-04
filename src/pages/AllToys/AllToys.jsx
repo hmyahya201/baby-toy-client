@@ -16,14 +16,14 @@ const AllToys = () => {
       event.preventDefault()
       const form = event.target
       const toyName = form.toyName.value;
-      fetch(`http://localhost:5000/gettoybyname/${toyName}`)
+      fetch(`https://baby-toy.onrender.com/gettoybyname/${toyName}`)
          .then(res => res.json())
          .then(data => setProducts(data))
       form.reset()
    }
 
    useEffect(() => {
-      fetch(`http://localhost:5000/all-toys?page=${currentPage}&limit=${itemsPerPage}`)
+      fetch(`https://baby-toy.onrender.com/all-toys?page=${currentPage}&limit=${itemsPerPage}`)
          .then(res => res.json())
          .then(data => setProducts(data))
    }, [currentPage])

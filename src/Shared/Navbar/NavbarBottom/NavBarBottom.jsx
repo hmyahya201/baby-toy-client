@@ -31,7 +31,7 @@ const NavBarBottom = () => {
               <Link to="alltoys" className="px-3 py-2 cursor-pointer">All Toys</Link>
               <Link to="mytoys" className="px-3 py-2 cursor-pointer">My Toys</Link>
               <Link to="addtoy" className="px-3 py-2 cursor-pointer">Add A Toy</Link>
-              <Link to="/" className="px-3 py-2 cursor-pointer">Blogs</Link>
+              <Link to="blogs" className="px-3 py-2 cursor-pointer">Blogs</Link>
               {
                user?<button onClick={handleLogOut} className="px-3 py-2 cursor-pointer">Log Out</button>:<Link to="login" className="px-3 py-2 cursor-pointer">Login</Link>
               }

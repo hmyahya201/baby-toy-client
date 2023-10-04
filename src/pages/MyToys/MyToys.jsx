@@ -6,7 +6,7 @@ import { AuthContext } from '../../Provider/AuthProviders/AuthProviders';
 const MyToys = () => {
    const {user} = useContext(AuthContext)
    const [products, setProducts] = useState([]);
-   const url = `http://localhost:5000/mytoys?email=${user?.email}`
+   const url = `https://baby-toy.onrender.com/mytoys?email=${user?.email}`
    useEffect(()=>{
       fetch(url, {
          method: "GET",

@@ -21,7 +21,7 @@ const UploadToy = () => {
          name, category, subCategory, price, img, quantity, rating, sellerName, sellerEmail, description
       }
       console.log(toyInfo)
-      fetch("http://localhost:5000/upload-toy",{
+      fetch("https://baby-toy.onrender.com/upload-toy",{
          method:"POST",
          headers: {"content-type": "application/json"},
          body: JSON.stringify(toyInfo)
